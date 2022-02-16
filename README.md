@@ -16,3 +16,12 @@
 * Must be interactive (i.e., accept and respond to user input).
 * Must meet good-quality coding standards (file structure, best practices, etc.).
 * Must have a professional README (unique name, description, link to the deployed app).
+
+## Technologies 
+
+* Node and express.js
+* MySQL
+* Sequelize 
+* [IMDB API](https://www.npmjs.com/package/imdb-api)
+* [RapidAPI](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/)
+* [dotenv npm](https://www.npmjs.com/package/dotenv)
