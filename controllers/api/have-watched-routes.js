@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         });
 });
 
-// Add 
+// POST movie to hasWatched db
 
 // DELETE movie from willWatch db
 router.delete('/:id', (req, res) => {
