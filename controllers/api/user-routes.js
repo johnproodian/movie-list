@@ -1,11 +1,7 @@
 const router = require('express').Router();
-<<<<<<< HEAD
 const { User } = require('../../models');
-=======
-const { User, haveWatched, willWatch } = require('../../models');
-// need to create this file...
+
 const sequelize = require('../config/connection');
->>>>>>> feature/api-routes
 
 // in insomnia: GET /api/users
 router.get('/', (req, res) => {
