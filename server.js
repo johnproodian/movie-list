@@ -1,5 +1,5 @@
 const express = require('express');
-//const controllers = require('./controllers);
+const controllers = require('./controllers');
 const sequelize = require('./config/connection');
 
 const app = express();
@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //this will use the routes
-//app.use(controllers);
+app.use(controllers);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening!'));
+    app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 });
