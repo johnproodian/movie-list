@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 
-// login
+// login functionality that verifies credentials
 router.post('/login', (req, res) => {
     // expects {email: 'email', password: 'password'}
     User.findOne({
