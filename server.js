@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
 
-const hbs = exphbs = exphbs.create({});
+// const hbs = exphbs = exphbs.create({});
 
 
 const session = require('express-session');
@@ -26,7 +26,7 @@ const sess = {
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.status(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 
