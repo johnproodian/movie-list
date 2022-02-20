@@ -1,7 +1,9 @@
 module.exports = {
-  content: ["./views/login.handlebars"],
+  content: ["./views/layouts/main.handlebars"],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // require('@tailwindcss/forms')
+  ],
 }
