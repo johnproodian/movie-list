@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>
+            <h1 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
                 <a href="/">Movies to Watch</a>
             </h1>
             <nav>
@@ -27,9 +27,12 @@
         <main>
             {{{ body }}}
         </main>
-
-        <footer>Made by: 'All of our github usernames as links'</footer>
     </div>
+
+    <footer class="fixed bottom-0 text-center w-full bg-#d4d4d8">
+        <p><strong>Created by:</strong> 'All of our github usernames as links'</p>
+    </footer>
+    
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
