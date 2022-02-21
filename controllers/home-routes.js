@@ -13,8 +13,12 @@ router.get('/', (req, res) => {
 
 router.get('/signup', (req, res) => {
     console.log('======================');
-    res.render('signup', {
-    });
+    res.render('signup', {});
+});
+
+router.get('/reset', (req, res) => {
+    console.log('======================');
+    res.render('reset', {});
 });
 
 // // get single post
