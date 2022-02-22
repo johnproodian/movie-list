@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 // POST /api/users
-router.post('/signup', (req, res) => {
+router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -35,7 +35,7 @@ router.post('/signup', (req, res) => {
 
 
 // login functionality that verifies credentials
-router.post('/', (req, res) => {
+router.post('/login', (req, res) => {
     // expects {email: 'email', password: 'password'}
     User.findOne({
         where: {
