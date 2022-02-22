@@ -16,7 +16,12 @@ hasWatched.init(
             type: Datatypes.STRING,
             allowNull: false
         },
-        // date: {}, not sure how to make date model
+        date: {
+            type: Datatypes.INTENGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement:true
+        },
         user_id: {
             type: Datatypes.INTENGER,
             references: {
@@ -33,6 +38,6 @@ hasWatched.init(
     }
 );
 
-module.exports = hasWatched
+module.exports = hasWatched;
 
 // sugestion for future addON 1.catagorize by genre
