@@ -1,55 +1,50 @@
 const router = require('express').Router();
-const { haveWatched } = require('../../models');
+const { willWatch } = require('../../models');
 // authgaurd? withAuth?
 
 // GET all 
 router.get('/', (req, res) => {
-    haveWatched.findAll()
-        .then(dbHaveWatchedData => res.json(dbHaveWatchedData))
+    willWatch.findAll()
+        .then(dbWillWatchData => res.json(dbWillWatchData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-// POST movie to hasWatched db
+// POST movie to willWatch db
 router.post('/', (req, res) => {
-    haveWatched.create({
+    willWatch.create({
         name: req.body.name,
         date: req.body.date,
         // should this req.session.user_id???
         user_id: req.body.user_id
     })
-        .then(dbHaveWatchedData => res.json(dbHaveWatchedData))
+        .then(dbWillWatchData => res.json(dbWillWatchData))
         .catch(err => {
             console.log(err);
             res.status(400).json(err);
         });
 });
 
-// DELETE movie from hasWatched db
+// DELETE movie from willWatch db
 router.delete('/:id', (req, res) => {
-    haveWatched.destroy({
+    willWatch.destroy({
         where:  {
             id: req.params.id
         }
     })
-        .then(dbHaveWatchedData => {
-            if (!dbHaveWatchedData) {
+        .then(dbWillWatchData => {
+            if (!dbWillWatchData) {
                 res.status(404).json({ message: 'No movie found with this id!' });
                 return;
             }
-            res.json(dbHaveWatchedData);
+            res.json(dbWillWatchData);
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
-
-
-
-
-
 
 module.exports = router;
