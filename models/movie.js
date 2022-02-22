@@ -1,26 +1,19 @@
 const { Model, Datatypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+class movie extends Model{}
 
-class willWatch extends Model {}
-
-willWatch.init(
+movie.init(
     {
         id: {
-            type: Datatypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        movieName: {
-            type: Datatypes.STRING,
-            allowNull: false,
-        },
-        date: {
             type: Datatypes.INTENGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement:true
+        },
+        movieName: {
+            type: Datatypes.STRING,
+            allowNull: false
         },
         userId: {
             type: Datatypes.INTEGER,
@@ -34,8 +27,8 @@ willWatch.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        moduleName: 'willWatch'
+        modelName: 'movie'
     }
 );
 
-module.exports = willWatch;
+module.exports = movie;
