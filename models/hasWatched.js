@@ -1,4 +1,4 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
@@ -7,23 +7,22 @@ class hasWatched extends Model {}
 hasWatched.init(
     {
         id: {
-            type: Datatypes.INTENGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
         movieName:{
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         date: {
-            type: Datatypes.INTENGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement:true
         },
         user_id: {
-            type: Datatypes.INTENGER,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: "id"

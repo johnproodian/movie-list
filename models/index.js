@@ -1,17 +1,20 @@
 const User = require('./User');
+const hasWatched = require('./hasWatched');
+const willWatch = require('./willWatch');
+const Movie = require('./movie');
 
 // associations
 
 User.hasMany(hasWatched, {
-    foreignKey: id
+    foreignKey: 'id'
 });
 
 User.hasMany(willWatch, {
-    foreignKey: id
+    foreignKey: 'id'
 });
 
-User.hasMany(movie, {
-    foreignKey:id
+User.hasMany(Movie, {
+    foreignKey: 'id'
 });
 
 hasWatched.belongsTo(User, {
