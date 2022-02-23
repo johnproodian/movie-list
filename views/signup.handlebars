@@ -13,7 +13,7 @@
     <div class="rounded-md shadow-sm -space-y-px">
         <div>
             <label for="username" class="sr-only">Username:</label>
-            <input id="username-signup" name="username" type="username" autocomplete="username" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+            <input id="username-signup" name="username" type="username" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
         </div>
         <div>
             <label for="email-address" class="sr-only">Email address:</label>
@@ -21,13 +21,15 @@
         </div>
         <div>
             <label for="password" class="sr-only">Password:</label>
-            <input id="password-signup" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+            <input id="password-signup" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
         </div>
+
+                {{!-- Commented out for future development --}}
         <br>
-        {{!-- Recovery Questions to Reset Password --}}
+        {{!-- Recovery Questions to Reset Password
         <h4 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Security Questions</h4>
         <br>
-        {{!-- Asks question(s) to confirm ID --}}
+        Asks question(s) to confirm ID
         
         <div>
             <prompt>What is your favorite color?</prompt>
@@ -38,7 +40,7 @@
             <prompt>What was your first pet's name?</prompt>
             <input id="security" name="security-q2" type="security-q2" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Answer 2">
         </div>
-        {{!-- User Inputs Answers and info is saved when registering --}}
+        User Inputs Answers and info is saved when registering --}}
     </div>
 
     <div>
