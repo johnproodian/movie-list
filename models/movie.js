@@ -21,6 +21,14 @@ Movie.init(
                 model: 'user',
                 key: 'id'
             }
+        },
+        willWatch: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+        },
+        haveWatched: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
         }
     },
     {
