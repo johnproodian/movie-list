@@ -1,10 +1,33 @@
 const router = require('express').Router();
+const { json } = require('express/lib/response');
 const { Movie } = require('../../models');
 
 // GET willWatch = true movies from movies table
-router.get('/', (req, res) => {
-    Movie.findONe
-})
+router.get('/:id', (req, res) => {
+    Movie.findOne({
+        where: {
+            willWatch: true
+        },
+        attribues: [
+            'id',
+            'movieName'
+        ]
+    }
+)
+    .then(dbMovieData => {
+        if (!dbMovieData) {
+            res.status(404).json({ message: 'No movies found with this name!' });
+            return;
+        }
+        res.json(dbMovieData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+
 // PUT api/movies/willWatch route that changes movie willWatch to true
 router.put('/willWatch', (req, res) => {
     Movie.update({
@@ -57,7 +80,7 @@ router.put('/hasWatched', (req, res) => {
 // PUT route api/movies/hasWatchedFalse that removes hasWatched
 router.put('/hasWatchedFalse', (req, res) => {
     Movie.update({
-        willWatch: false
+        hasWatched: false
     },
     {
         where: {
@@ -81,7 +104,7 @@ router.put('/hasWatchedFalse', (req, res) => {
 // PUT route api/movies/willWatchFalse that removes willWatch w/o adding it to hasWatched
 router.put('/willWatchFalse', (req, res) => {
     Movie.update({
-        hasWatched: false
+        willWatch: false
     },
     {
         where: {

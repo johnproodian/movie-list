@@ -28,7 +28,7 @@ Movie.init(
         },
         haveWatched: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true
         }
     },
     {
