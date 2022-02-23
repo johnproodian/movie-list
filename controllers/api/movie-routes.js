@@ -142,5 +142,9 @@ router.put('/willWatchFalse', (req, res) => {
     })
 });
 
+// Other routes:
+    // PUT --> straight to haveWatched (make sure to make willWatch false)
+    // GET --> haveWAtched? But it might be better just to call both with the get all
+
 
 module.exports = router;
