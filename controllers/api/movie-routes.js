@@ -2,6 +2,21 @@ const router = require('express').Router();
 const { json } = require('express/lib/response');
 const { Movie } = require('../../models');
 
+// GET all movies
+router.get('/', (req, res) => {
+    Movie.findAll({
+        attributes: [
+            'id',
+            'movieName'
+        ]
+    })
+        .then(dbMovieData => res.json(dbMovieData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 // GET willWatch = true movies from movies table
 router.get('/:id', (req, res) => {
     Movie.findOne({
