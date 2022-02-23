@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 });
 
 // GET willWatch = true movies from movies table
-router.get('/:id', (req, res) => {
+router.get('/willWatch', (req, res) => {
     Movie.findOne({
         where: {
             willWatch: true
@@ -70,10 +70,10 @@ router.put('/willWatch', (req, res) => {
 });
 
 // PUT route api/movies/hasWatched that changes movie willWatch to false, hasWatched to true
-router.put('/hasWatched', (req, res) => {
+router.put('/haveWatched', (req, res) => {
     Movie.update({
         willWatch: false,
-        hasWatched: true
+        haveWatched: true
     },
     {
         where: {
@@ -95,9 +95,9 @@ router.put('/hasWatched', (req, res) => {
 });
 
 // PUT route api/movies/hasWatchedFalse that removes hasWatched
-router.put('/hasWatchedFalse', (req, res) => {
+router.put('/haveWatchedFalse', (req, res) => {
     Movie.update({
-        hasWatched: false
+        haveWatched: false
     },
     {
         where: {
