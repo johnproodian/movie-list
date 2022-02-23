@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { json } = require('express/lib/response');
+// const { json } = require('express/lib/response');
 const { Movie } = require('../../models');
 
 // GET all movies
@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
     Movie.findAll({
         attributes: [
             'id',
-            'movieName'
+            'movieName',
+            'willWatch',
+            'haveWatched'
         ]
     })
         .then(dbMovieData => res.json(dbMovieData))
