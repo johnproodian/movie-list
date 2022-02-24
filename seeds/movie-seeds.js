@@ -37,6 +37,9 @@ const moviesData = [
     {
         movieName: 'Twister'
     },
+    {
+        movieName: 'Saving Private Ryan'
+    }
 ];
 
 const seedMovies = () => Movies.bulkCreate(moviesData);
