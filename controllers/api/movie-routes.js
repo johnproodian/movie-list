@@ -48,7 +48,8 @@ router.get('/willWatch', (req, res) => {
 // PUT api/movies/willWatch route that changes movie willWatch to true
 router.put('/willWatch', (req, res) => {
     Movie.update({
-        willWatch: true
+        willWatch: true,
+        haveWatched: false
     },
     {
         where: {

@@ -1,8 +1,8 @@
-{{!-- revisit 14.1 and #each helper?? --}}
-
 <div class='min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8' id="search-box">
-        <input class="input" type="text" placeholder="Search for Movies by name here!" id="movie-input">
+    <form id="movie-search-form">
+        <input class="input" type="text" placeholder="Search for Movies by name here!" id="movie-input" name="movie-title">
         <button id="search-btn" autocomplete="movies-list">Search</button>
+    </form>
 </div>
 <div class="" id="column-container">
         <!--Will Watch column-->
@@ -36,4 +36,5 @@
     </div>
 
 <script src="/javascript/logout.js"></script>
-<script src="/javascript/homepage.js"></script>
+<script src="/javascript/Search-to-willWatch.js"></script>
+<script src="/javascript/willWatch-to-haveWatched.js"></script>
