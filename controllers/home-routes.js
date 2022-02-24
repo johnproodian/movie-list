@@ -37,7 +37,11 @@ router.get('/', (req, res) => {
     })
         .then(dbMovieData => {
             hwMovies = dbMovieData.map(hwMovie => hwMovie.get({ plain: true}));
-            res.render('home', { wwMovies, hwMovies });
+            res.render('home', { 
+                wwMovies,
+                hwMovies,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
