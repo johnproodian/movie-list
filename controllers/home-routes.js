@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Movie } = require('../models');
 
 
 router.get('/', (req, res) => {
@@ -9,10 +9,41 @@ router.get('/', (req, res) => {
         res.redirect('/login');
         return;
     }
-    res.render('home', {
-    // posts,
-    // loggedIn: req.session.loggedIn
-    });
+
+    let wwMovies;
+    let hwMovies;
+
+    Movie.findAll({
+        where: {
+            willWatch: true
+        },
+        attributes: [
+            'movieName',
+        ]
+    })
+        .then(dbMovieData => {
+            wwMovies = dbMovieData.map(wwMovie => wwMovie.get({ plain: true }));
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+
+    Movie.findAll({
+        where: {
+            haveWatched: true
+        },
+        attributes: [ 'movieName' ]
+    })
+        .then(dbMovieData => {
+            hwMovies = dbMovieData.map(hwMovie => hwMovie.get({ plain: true}));
+            res.render('home', { wwMovies, hwMovies });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+    
 });
 
 router.get('/signup', (req, res) => {
