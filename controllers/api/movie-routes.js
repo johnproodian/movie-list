@@ -71,14 +71,14 @@ router.put('/willWatch', (req, res) => {
 });
 
 // PUT route api/movies/hasWatched that changes movie willWatch to false, hasWatched to true
-router.put('/haveWatched', (req, res) => {
+router.put('/haveWatched/', (req, res) => {
     Movie.update({
         willWatch: false,
         haveWatched: true
     },
     {
         where: {
-            movieName: req.body.movieName
+            id: req.body.id
         }
     }
 )
