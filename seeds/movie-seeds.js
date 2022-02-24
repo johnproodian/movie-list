@@ -39,6 +39,6 @@ const moviesData = [
     },
 ];
 
-const seedMovies = () => Movies.bulkCreate(moviesData);
+// const seedMovies = () => Movies.bulkCreate(moviesData);
 
-module.exports = seedMovies;
+module.exports = moviesData;
