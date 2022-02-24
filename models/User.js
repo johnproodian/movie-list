@@ -1,12 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypyt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 // Create user model, This method runs on instance data per user to check password
 
 class User extends Model {
     checkPassword(loginPw) {
+<<<<<<< HEAD
         return bcrypyt.compareSync(loginPw, this.password);
+=======
+        return bcrypt.compareSync(loginPw, this.password);
+>>>>>>> feature/homepage
     }
 };
 

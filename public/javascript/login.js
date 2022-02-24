@@ -19,6 +19,7 @@ async function signupFormHandler(event) {
         // check response status
         if (response.ok) {
             console.log('success');
+            window.location.href = ""
         } else {
             alert(response.statusText);
         }
@@ -44,14 +45,15 @@ async function loginFormHandler(event) {
         // check response status
         if (response.ok) {
             console.log('success');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
     }
 };
 
-if (document.querySelector('#login-form')) {
+// if (document.querySelector('#login-form')) {
     document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
-} else {
+// } else {
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
-};
+// };

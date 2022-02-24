@@ -16,12 +16,12 @@
                 <a href="/">Movies to Watch</a>
             </h1>
             <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
+                {{!-- {{#if loggedIn}} --}}
+                <a href="/login">login</a>
                 <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
+                {{!-- {{else}} --}}
                 
-                {{/if}}
+                {{!-- {{/if}} --}}
             </nav>
         </header>
         <main>
@@ -34,9 +34,9 @@
     </footer>
     
 
-    {{#if loggedIn}}
+    {{!-- {{#if loggedIn}} --}}
     <script src="/javascript/logout.js"></script>
-    {{/if}}
+    {{!-- {{/if}} --}}
 </body>
 
 </html>
