@@ -5,7 +5,7 @@ const bcrypyt = require('bcrypt');
 // Create user model, This method runs on instance data per user to check password
 
 class User extends Model {
-    checkpassword(loginPw) {
+    checkPassword(loginPw) {
         return bcrypyt.compareSync(loginPw, this.password);
     }
 };
