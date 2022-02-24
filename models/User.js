@@ -5,13 +5,7 @@ const bcrypt = require('bcrypt');
 // Create user model, This method runs on instance data per user to check password
 
 class User extends Model {
-    checkPassword(loginPw) {
-<<<<<<< HEAD
-        return bcrypyt.compareSync(loginPw, this.password);
-=======
-        return bcrypt.compareSync(loginPw, this.password);
->>>>>>> feature/homepage
-    }
+    checkPassword(loginPw) { return bcrypt.compareSync(loginPw, this.password);}
 };
 
 // this code defines table columns and config for the database. Id, username, email and password are columns. Password is encrypted.
