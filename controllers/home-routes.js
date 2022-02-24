@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
             willWatch: true
         },
         attributes: [
+            'id',
             'movieName',
         ]
     })
@@ -33,7 +34,7 @@ router.get('/', (req, res) => {
         where: {
             haveWatched: true
         },
-        attributes: [ 'movieName' ]
+        attributes: [ 'id', 'movieName' ]
     })
         .then(dbMovieData => {
             hwMovies = dbMovieData.map(hwMovie => hwMovie.get({ plain: true}));
