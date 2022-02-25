@@ -38,6 +38,7 @@ router.get('/', (req, res) => {
     })
         .then(dbMovieData => {
             hwMovies = dbMovieData.map(hwMovie => hwMovie.get({ plain: true}));
+            console.log('wwMovies: ' + wwMovies, 'hwMovies: ' + hwMovies);
             res.render('home', { 
                 wwMovies,
                 hwMovies,
@@ -67,6 +68,7 @@ router.get('/login', (req, res) => {
     res.render('login', {
     });
 });
+
 
 module.exports = router;
 

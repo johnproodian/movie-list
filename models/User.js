@@ -44,12 +44,12 @@ User.init (
         hooks: {
             // these hooks set up lifecycle hooks to encrypt passwords and update password through newUserData
             async beforeCreate(newUserData) {
-                newUserData.password = await bcrypyt.hash(newUserData.password, 10);
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
 
             async beforeUpdate(updatedUserData) {
-                updatedUserData.password = await bcrypyt.hash(updatedUserData.password, 10);
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
                 return updatedUserData;
             }
         },

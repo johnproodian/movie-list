@@ -8,15 +8,15 @@
         <!--Will Watch column-->
         <div class="" id="">
             <h3 class="">WILL WATCH</h3>
-            <div class="">
+            <div id="will-watch">
                 {{#each wwMovies as |wwMovie|}}
-                <div class="">
+                 {{!-- <div class=""> --}}
                     <div class="">
-                        <div class="" id="">
-                            <h4 id="{{wwMovie.id}}">{{wwMovie.movieName}}</h4>
+                        <div class="ww-movie" id="">
+                            <a id="ww-{{wwMovie.id}}">{{wwMovie.movieName}}</a>
                         </div>
                     </div>
-                </div>
+                {{!-- </div>  --}}
             </div>
             {{/each}}
         </div>

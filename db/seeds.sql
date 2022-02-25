@@ -3,5 +3,6 @@ VALUES
     ('Forrest Gump'),
     ('Mean Girls'),
     ('A New Hope'),
-    ('Space Balls')
+    ('Space Balls'),
+    ('Clueless');
     

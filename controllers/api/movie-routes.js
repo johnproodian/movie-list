@@ -78,7 +78,7 @@ router.put('/haveWatched/', (req, res) => {
     },
     {
         where: {
-            id: req.body.id
+            movieName: req.body.movieName
         }
     }
 )
