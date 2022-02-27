@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies!</title>
     <link rel="stylesheet" href="../../public/stylesheets/output.css">
-    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+    {{!-- <link rel="stylesheet" href="../../public/stylesheets/style.css"> --}}
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -19,9 +19,9 @@
             <nav>
                 {{#if loggedIn}}
                 <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
+                {{else}} {{#unless login}}
                 <a href="/login">login</a>
-                {{/if}}
+                {{/unless}}{{/if}}
             </nav>
         </header>
         <main>

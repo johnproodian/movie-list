@@ -66,6 +66,7 @@ router.get('/login', (req, res) => {
     console.log('======================');
     
     res.render('login', {
+        login: true
     });
 });
 
