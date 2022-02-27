@@ -13,7 +13,7 @@
                  {{!-- <div class=""> --}}
                     <div class="">
                         <div class="ww-movie" id="">
-                            <a id="ww-{{wwMovie.id}}">{{wwMovie.movieName}}</a>
+                            <button type="button" class="ww-btn" id="ww-{{wwMovie.id}}">{{wwMovie.movieName}}</button>
                         </div>
                     </div>
                 {{!-- </div>  --}}
@@ -27,7 +27,7 @@
                 {{#each hwMovies as |hwMovie|}}
                 <div class="">
                     <div class="" id=''>
-                        <h4>{{hwMovie.movieName}}</h4>
+                        <button type="button">{{hwMovie.movieName}}</button>
                     </div>
                 </div>
                 {{/each}}
