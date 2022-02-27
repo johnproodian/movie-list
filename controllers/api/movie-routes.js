@@ -2,6 +2,20 @@ const router = require('express').Router();
 // const { json } = require('express/lib/response');
 const { Movie } = require('../../models');
 
+// POST new movies to the movies db
+router.post('/', (req, res) => {
+    Movie.create({
+        movieName: req.body.movieName
+    })
+        .then(dbMovieData => {
+            res.json(dbMovieData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(400).json(err);
+        });
+});
+
 // GET all movies
 router.get('/', (req, res) => {
     Movie.findAll({
