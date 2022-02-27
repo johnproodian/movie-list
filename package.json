@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:tailwinds": "tailwind build public/stylesheets/input.css -o public/stylesheets/output.css",
     "start": "node server.js",
     "seed": "node seeds/index.js"
   },
