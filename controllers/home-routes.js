@@ -55,6 +55,7 @@ router.get('/', (req, res) => {
 router.get('/signup', (req, res) => {
     console.log('======================');
     res.render('signup', {
+        login: true
     });
 });
 
