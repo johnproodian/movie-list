@@ -1,7 +1,7 @@
 const User = require('./User');
 const hasWatched = require('./hasWatched');
 const willWatch = require('./willWatch');
-const Movie = require('./movie');
+const Movie = require('./Movie');
 
 // associations
 
@@ -13,9 +13,9 @@ User.hasMany(willWatch, {
     foreignKey: 'id'
 });
 
-User.hasMany(Movie, {
-    foreignKey: 'id'
-});
+// User.hasMany(Movie, {
+//     foreignKey: 'id'
+// });
 
 hasWatched.belongsTo(User, {
     foreignKey: 'user_id'
@@ -28,4 +28,4 @@ hasWatched.belongsTo(User, {
 
 
 
-module.exports = { User }
+module.exports = { User, Movie }

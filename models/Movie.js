@@ -15,13 +15,13 @@ Movie.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        userId: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
+        // userId: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'user',
+        //         key: 'id'
+        //     }
+        // },
         willWatch: {
             type: DataTypes.BOOLEAN,
             allowNull: true,
@@ -35,7 +35,8 @@ Movie.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'movie'
+        modelName: 'movie',
+        timestamps: false
     }
 );
 

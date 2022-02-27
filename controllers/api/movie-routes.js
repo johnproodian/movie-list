@@ -1,9 +1,26 @@
 const router = require('express').Router();
-const { json } = require('express/lib/response');
+// const { json } = require('express/lib/response');
 const { Movie } = require('../../models');
 
+// GET all movies
+router.get('/', (req, res) => {
+    Movie.findAll({
+        attributes: [
+            'id',
+            'movieName',
+            'willWatch',
+            'haveWatched'
+        ]
+    })
+        .then(dbMovieData => res.json(dbMovieData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 // GET willWatch = true movies from movies table
-router.get('/:id', (req, res) => {
+router.get('/willWatch', (req, res) => {
     Movie.findOne({
         where: {
             willWatch: true
@@ -31,7 +48,8 @@ router.get('/:id', (req, res) => {
 // PUT api/movies/willWatch route that changes movie willWatch to true
 router.put('/willWatch', (req, res) => {
     Movie.update({
-        willWatch: true
+        willWatch: true,
+        haveWatched: false
     },
     {
         where: {
@@ -53,10 +71,10 @@ router.put('/willWatch', (req, res) => {
 });
 
 // PUT route api/movies/hasWatched that changes movie willWatch to false, hasWatched to true
-router.put('/hasWatched', (req, res) => {
+router.put('/haveWatched/', (req, res) => {
     Movie.update({
         willWatch: false,
-        hasWatched: true
+        haveWatched: true
     },
     {
         where: {
@@ -78,9 +96,9 @@ router.put('/hasWatched', (req, res) => {
 });
 
 // PUT route api/movies/hasWatchedFalse that removes hasWatched
-router.put('/hasWatchedFalse', (req, res) => {
+router.put('/haveWatchedFalse', (req, res) => {
     Movie.update({
-        hasWatched: false
+        haveWatched: false
     },
     {
         where: {
@@ -124,6 +142,10 @@ router.put('/willWatchFalse', (req, res) => {
         res.status(500).json(err);
     })
 });
+
+// Other routes:
+    // PUT --> straight to haveWatched (make sure to make willWatch false)
+    // GET --> haveWAtched? But it might be better just to call both with the get all
 
 
 module.exports = router;
