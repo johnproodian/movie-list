@@ -1,39 +1,41 @@
 <div class='min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8' id="search-box">
-    <form id="movie-search-form">
-        <input class="input" type="text" placeholder="Search for Movies by name here!" id="movie-input" name="movie-title">
-        <button id="search-btn" autocomplete="movies-list">Search</button>
+    <form id="movie-search-form py-8">
+        <input class="input flex box-content h-3 w-60 p-3 border-1" type="text" placeholder="Search for Movies by name here!" id="movie-input" name="movie-title">
+    <div class = "py-4">
+        <button class = "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500" id="search-btn" autocomplete="movies-list">Search</button>
+    </div>
     </form>
 </div>
-<div class="" id="column-container">
+<div class="columns-2 gap-10 hover:columns-2 " id="column-container">
         <!--Will Watch column-->
-        <div class="" id="">
-            <h3 class="">WILL WATCH</h3>
-            <div id="will-watch">
-                {{#each wwMovies as |wwMovie|}}
-                 {{!-- <div class=""> --}}
-                    <div class="">
-                        <div class="ww-movie" id="">
-                            <button type="button" class="ww-btn" id="ww-{{wwMovie.id}}">{{wwMovie.movieName}}</button>
-                        </div>
+    <div class="bg-sky-500">
+        <h3 class="text-2xl flex place-content-center">Will Watch</h3>
+        <div id="will-watch">
+            {{#each wwMovies as |wwMovie|}}
+                {{!-- <div class=""> --}}
+                <div class="">
+                    <div class="ww-movie" id="">
+                        <button type="button" class="ww-btn" id="ww-{{wwMovie.id}}">{{wwMovie.movieName}}</button>
                     </div>
-                {{!-- </div>  --}}
+                </div>
+            {{!-- </div>  --}}
+        </div>
+        {{/each}}
+    </div>
+    <!--Have Watched column-->
+    <div class="bg-sky-500" id="">
+        <h3 class="text-2xl flex place-content-center">Have Watched</h3>
+        <div class="">
+            {{#each hwMovies as |hwMovie|}}
+            <div class="">
+                <div class="" id=''>
+                    <button type="button">{{hwMovie.movieName}}</button>
+                </div>
             </div>
             {{/each}}
         </div>
-        <!--Have Watched column-->
-        <div class="" id="">
-            <h3 class="">HAVE WATCHED</h3>
-            <div class="">
-                {{#each hwMovies as |hwMovie|}}
-                <div class="">
-                    <div class="" id=''>
-                        <button type="button">{{hwMovie.movieName}}</button>
-                    </div>
-                </div>
-                {{/each}}
-            </div>
-        </div>
     </div>
+</div>
 
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/Search-to-willWatch.js"></script>

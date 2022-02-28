@@ -5,22 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies!</title>
-    <link rel="stylesheet" href="../../public/stylesheets/output.css">
-    {{!-- <link rel="stylesheet" href="../../public/stylesheets/style.css"> --}}
+    <link rel="stylesheet" href="./stylesheets/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-midnight">
+<body style = "background-image: url('https://britasia.tv/wp-content/uploads/2019/08/p4iaEa4.jpg');" class="w-full h-full bg-cover bg-no-repeat font-Poppins">
     <div class="wrapper">
         <header>
-            <h1 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <h1 class="mt-6 text-center text-3xl font-extrabold text-sky-200">
                 <a href="/">Movies to Watch</a>
             </h1>
-            <nav>
+            <nav class ='container flex'>
                 {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">logout</button>
+                <button id="logout" class=" container font-bold font-medium text-sky-600 hover:text-sky-800">Log Out</button>
                 {{else}} {{#unless login}}
-                <a href="/login">login</a>
+                <a href="/login"></a>
                 {{/unless}}{{/if}}
             </nav>
         </header>
@@ -29,8 +28,8 @@
         </main>
     </div>
 
-    <footer class="fixed bottom-0 text-center w-full bg-#d4d4d8">
-        <p><strong>Created by:</strong> 'All of our github usernames as links'</p>
+    <footer class="fixed bottom-0 text-center w-full">
+        <p class = "text-sky-200"><strong class = "text-sky-200">Created by:</strong> 'All of our github usernames as links'</p>
     </footer>
     
 
