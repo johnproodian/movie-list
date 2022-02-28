@@ -1,6 +1,6 @@
 # Bootcamp Project 2: Interactive Full Stack Project  // Movie List
 
-This project, Movie List, is an interactive full stack project for Project 2 of our bootcamp. It's an app that allows you to hsot an archive of movies you would like to watch as well as movies that you have already watched.  
+This project, Movie List, is an interactive full stack project for Project 2 of our bootcamp. It's an app that allows you to host an archive of movies you would like to watch as well as movies that you have already watched.  
 
 The idea for this project came from the discussions we often have... where someone says "Hey have you seen <movie>?" and you have to respond with "Not yet, but it's on my list!"  
 
@@ -14,6 +14,26 @@ Once logged in, I want to search for movies and add them to my list of movies to
 Once I've watched a movie, I'd want to move it over to the columns of movies that I have watched.
 As a USER, I want to be able to log out to protect my privacy.
 ```
+## Note on Usage
+
+At its current stage of development, the movies that the user may search for and add to their 'WILL WATCH' list are confined to those in our database, namely:
+
+* Forrest Gump
+* Mean Girls
+* A New Hope
+* Spaceballs
+* The Fifth Element
+* Death Becomes Her
+* The Breakfast Club
+* Clueless
+* The Wedding Singer
+* 10 Things I Hate About You
+* Scream
+* Twister
+
+Movies may be added to the 'WILL WATCH' column by searching for them in the search bar on the home page. 
+
+Then, clicking on the movie in the WILL WATCH column will move it to the 'HAVE WATCHED' column.
 
 ## Acceptance Criteria
 
