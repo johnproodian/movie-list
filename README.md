@@ -60,6 +60,26 @@ Xavyr Rodriguez
 Brenda Salinas  
 
 ```
+## Important considerations
+```
+As of right now, this application only allows you to search from a few pre-selected titles that exist within the database. In the future, we plan to integrate an API that sources movie titles and TV shows from IMDB instead of hosting the titles locally.
+
+For now, the only movies available to search are the following:
+Forrest Gump  
+Mean Girls  
+A New Hope  
+Spaceballs  
+The Fifth Element  
+Death Becomes Her  
+The Breakfast Club  
+Clueless  
+The Wedding Singer  
+10 Things I Hate About You  
+Scream  
+Twister  
+
+Thank you for your understanding.
+```
 
 ## Screenshot
 
