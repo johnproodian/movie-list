@@ -6,36 +6,36 @@
     </div>
     </form>
 </div>
-<div class="grid-cols-2 gap-4 flex justify-center items-center" id="column-container">
+<div class="columns-2 gap-10 hover:columns-2 " id="column-container">
         <!--Will Watch column-->
-        <div class="bg-sky-500">
-            <h3 class="text-2xl">Will Watch</h3>
-            <div id="will-watch">
-                {{#each wwMovies as |wwMovie|}}
-                 {{!-- <div class=""> --}}
-                    <div class="">
-                        <div class="ww-movie" id="">
-                            <button type="button" class="ww-btn" id="ww-{{wwMovie.id}}">{{wwMovie.movieName}}</button>
-                        </div>
+    <div class="bg-sky-500">
+        <h3 class="text-2xl flex place-content-center">Will Watch</h3>
+        <div id="will-watch">
+            {{#each wwMovies as |wwMovie|}}
+                {{!-- <div class=""> --}}
+                <div class="">
+                    <div class="ww-movie" id="">
+                        <button type="button" class="ww-btn" id="ww-{{wwMovie.id}}">{{wwMovie.movieName}}</button>
                     </div>
-                {{!-- </div>  --}}
+                </div>
+            {{!-- </div>  --}}
+        </div>
+        {{/each}}
+    </div>
+    <!--Have Watched column-->
+    <div class="bg-sky-500" id="">
+        <h3 class="text-2xl flex place-content-center">Have Watched</h3>
+        <div class="">
+            {{#each hwMovies as |hwMovie|}}
+            <div class="">
+                <div class="" id=''>
+                    <button type="button">{{hwMovie.movieName}}</button>
+                </div>
             </div>
             {{/each}}
         </div>
-        <!--Have Watched column-->
-        <div class="bg-sky-500" id="">
-            <h3 class="text-2xl">Have Watched</h3>
-            <div class="">
-                {{#each hwMovies as |hwMovie|}}
-                <div class="">
-                    <div class="" id=''>
-                        <button type="button">{{hwMovie.movieName}}</button>
-                    </div>
-                </div>
-                {{/each}}
-            </div>
-        </div>
     </div>
+</div>
 
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/Search-to-willWatch.js"></script>
